@@ -14,12 +14,15 @@ let package = Package(
         )
     ],
     dependencies: [
-        .package(url: "https://github.com/Alamofire/Alamofire.git", from: "5.6.4")
+        .package(url: "https://github.com/Alamofire/Alamofire.git", .upToNextMajor(from: "5.10.2")),
+        .package(url: "https://github.com/Moya/Moya.git", .upToNextMajor(from: "15.0.3")),
+        .package(url: "https://gitee.com/cellgit/Result.git", from: "5.0.0")
+//        .package(url: "https://github.com/antitypical/Result.git", from: "5.0.0")
     ],
     targets: [
         .target(
             name: "BearSdk",
-            dependencies: ["Alamofire"]
+            dependencies: ["Alamofire", "Moya", "Result"]
         ),
         .testTarget(
             name: "BearSdkTests",
