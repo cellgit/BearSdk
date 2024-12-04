@@ -9,9 +9,9 @@ import Foundation
 import Moya
 
 #if DEBUG
-public let plugins_phone: [PluginType] = [LoggerPlugin, FilterPlugin(), ErrorHandlerPlugin()]
+public let plugins_bear: [PluginType] = [LoggerPlugin, FilterPlugin(), ErrorHandlerPlugin()]
 #else
-public let plugins_phone: [PluginType] = [FilterPlugin(), ErrorHandlerPlugin()]
+public let plugins_bear: [PluginType] = [FilterPlugin(), ErrorHandlerPlugin()]
 #endif
 
 

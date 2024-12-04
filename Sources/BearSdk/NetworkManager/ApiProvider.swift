@@ -12,6 +12,6 @@
 //    public static let house: MoyaProvider<HouseTarget> = getProvider(api: HouseTarget.self)
 //    
 //    public static func getProvider<T>(api: T.Type) -> MoyaProvider<T> {
-//        MoyaProvider<T>(plugins: plugins_phone)
+//        MoyaProvider<T>(plugins: plugins_bear)
 //    }
 //}

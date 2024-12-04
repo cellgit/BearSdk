@@ -8,14 +8,14 @@
 import Foundation
 import Moya
 
-protocol BaseTargetType: TargetType {
+public protocol BaseTargetType: TargetType {
     var base: String { get }
     var commonHeaders: [String: String] { get }
     var commonHeadersWithoutToken: [String: String] { get }
     var formDataHeaders: [String: String] { get }
 }
 
-extension BaseTargetType {
+public extension BaseTargetType {
     var baseURL: URL {
         return URL(string: base)!
     }
@@ -26,7 +26,7 @@ extension BaseTargetType {
 }
 
 // 定义共用的属性
-extension BaseTargetType {
+public extension BaseTargetType {
     var base: String {
         return "http://47.116.24.54:3001/api/v1"
     }
@@ -67,7 +67,7 @@ extension BaseTargetType {
     
 }
 
-extension BaseTargetType {
+public extension BaseTargetType {
     // 提供一个处理 JSON Body 数据的默认实现
     func jsonTask(parameters: [String: Any]) -> Task {
         return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
@@ -75,7 +75,7 @@ extension BaseTargetType {
 }
 
 // 默认情况下，所有的请求都假定使用这种方式传递参数
-extension BaseTargetType {
+public extension BaseTargetType {
     var task: Task {
         return .requestPlain // 仅作为占位符，具体实现应该根据实际情况替换
     }
